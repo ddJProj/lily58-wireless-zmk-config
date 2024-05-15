@@ -157,7 +157,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "LAY2_AND_ALT";
             #binding-cells = <0>;
-            bindings = <&mo 1>, <&kp LEFT_ALT>, <&mac_alt_lay1>;
+            bindings = <&mo 2>, <&kp LEFT_ALT>, <&mac_alt_lay1>;
 
             tapping-term-ms = <230>;
         };
@@ -176,14 +176,12 @@
 
             display-name = "Base";
             bindings = <
-&kp ENTER     &kp N1          &kp N2     &kp N3      &kp N4         &kp N5                                         &kp N6         &kp N7     &kp N8    &kp N9  &kp N0  &lay2_and_alt
-&kp ESCAPE    &kp APOSTROPHE  &kp COMMA  &kp PERIOD  &kp P          &kp Y                                          &kp F          &kp G      &kp C     &kp R   &kp L   &kp CAPS
-&kp TAB       &kp A           &kp O      &kp E       &kp U          &kp I                                          &kp D          &kp H      &kp T     &kp N   &kp S   &kp MINUS
-&kp LEFT_ALT  &kp SEMICOLON   &kp Q      &kp J       &kp K          &kp X       &kp LBKT         &kp RBKT          &kp B          &kp M      &kp W     &kp V   &kp Z   &kp EQUAL
-                                         &mo 3       &kp BACKSPACE  &shft_mod1  &gui_and_lay1    &cntrl_andlayer1  &mod_low_shft  &kp SPACE  &kp RGUI
+&kp LEFT_ALT  &kp N1          &kp N2     &kp N3         &kp N4      &kp N5                                     &kp N6  &kp N7         &kp N8     &kp N9  &kp N0  &kp LEFT_ALT
+&kp ENTER     &kp APOSTROPHE  &kp COMMA  &kp PERIOD     &kp P       &kp Y                                      &kp F   &kp G          &kp C      &kp R   &kp L   &mo 2
+&kp ESCAPE    &kp A           &kp O      &kp E          &kp U       &kp I                                      &kp D   &kp H          &kp T      &kp N   &kp S   &kp MINUS
+&kp TAB       &kp SEMICOLON   &kp Q      &kp J          &kp K       &kp X   &kp CAPS         &kp GRAVE         &kp B   &kp M          &kp W      &kp V   &kp Z   &kp EQUAL
+                                         &kp BACKSPACE  &shft_mod1  &mo 3   &gui_and_lay1    &cntrl_andlayer1  &mo 2   &mod_low_shft  &kp SPACE
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         Layer_1 {
@@ -208,12 +206,10 @@
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2       &bt BT_SEL 3     &bt BT_SEL 4                    &out OUT_USB  &trans     &trans           &trans    &trans    &trans
 &kp F1      &kp F2        &kp F3        &kp F4             &kp F5           &kp F6                          &kp F7        &kp F8     &kp F9           &kp F10   &kp F11   &kp F12
-&kp GRAVE   &kp EXCL      &kp AT        &kp HASH           &kp DOLLAR       &kp PRCNT                       &kp CARET     &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp TILDE
+&trans      &kp EXCL      &kp AT        &kp HASH           &kp DOLLAR       &kp PRCNT                       &kp CARET     &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp TILDE
 &trans      &trans        &kp CAPS      &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp K_MUTE    &trans    &trans  &trans        &kp MINUS  &kp KP_PLUS      &kp LBRC  &kp RBRC  &kp PIPE
                                         &trans             &trans           &trans        &trans    &trans  &trans        &trans     &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         raise_layer {
@@ -226,14 +222,12 @@
 
             display-name = "Raise";
             bindings = <
-&trans     &trans        &trans        &trans        &trans        &trans                      &trans       &trans    &trans    &trans  &trans     &trans
-&trans     &none         &kp F9        &kp COMMA     &kp F1        &none                       &kp N6       &kp N7    &kp N8    &kp N9  &kp N0     &trans
-&kp F1     &kp F2        &kp A         &kp O         &kp E         &none                       &trans       &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
-&kp SPACE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_5  &none   &mkp MB1    &trans  &kp KP_PLUS  &trans    &trans    &trans  &trans     &trans
-                                       &trans        &trans        &trans  &trans      &trans  &trans       &trans    &trans
+&trans  &trans        &trans        &trans        &trans        &trans                      &trans       &trans    &trans    &trans     &trans  &trans
+&trans  &kp F8        &kp F9        &kp COMMA     &kp F1        &none                       &kp N6       &kp N7    &kp UP    &kp N9     &kp N0  &trans
+&trans  &kp F2        &kp A         &kp O         &kp E         &none                       &trans       &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_5  &none   &mkp MB1    &trans  &kp KP_PLUS  &trans    &trans    &trans     &trans  &trans
+                                    &trans        &trans        &trans  &trans      &trans  &trans       &trans    &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     };
 };
