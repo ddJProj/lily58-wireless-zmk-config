@@ -161,6 +161,20 @@
 
             tapping-term-ms = <230>;
         };
+
+        sensor_rotate_right_encoder: sensor_rotate_right_encoder {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "SENSOR_ROTATE_RIGHT_ENCODER";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp C_VOLUME_UP>, <&kp C_VOLUME_DOWN>;
+        };
+
+        right_encode_with_param: right_encode_with_param {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            label = "RIGHT_ENCODE_WITH_PARAM";
+            #sensor-binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+        };
     };
 
     keymap {
@@ -179,9 +193,11 @@
 &kp LEFT_ALT  &kp N1          &kp N2     &kp N3         &kp N4      &kp N5                                     &kp N6  &kp N7         &kp N8     &kp N9  &kp N0  &kp LEFT_ALT
 &kp ENTER     &kp APOSTROPHE  &kp COMMA  &kp PERIOD     &kp P       &kp Y                                      &kp F   &kp G          &kp C      &kp R   &kp L   &mo 2
 &kp ESCAPE    &kp A           &kp O      &kp E          &kp U       &kp I                                      &kp D   &kp H          &kp T      &kp N   &kp S   &kp MINUS
-&kp TAB       &kp SEMICOLON   &kp Q      &kp J          &kp K       &kp X   &kp CAPS         &kp GRAVE         &kp B   &kp M          &kp W      &kp V   &kp Z   &kp EQUAL
+&kp TAB       &kp SEMICOLON   &kp Q      &kp J          &kp K       &kp X   &kp CAPS         &kp C_PLAY_PAUSE  &kp B   &kp M          &kp W      &kp V   &kp Z   &kp EQUAL
                                          &kp BACKSPACE  &shft_mod1  &mo 3   &gui_and_lay1    &cntrl_andlayer1  &mo 2   &mod_low_shft  &kp SPACE
             >;
+
+            sensor-bindings = <&sensor_rotate_right_encoder>;
         };
 
         Layer_1 {
@@ -192,6 +208,8 @@
 &trans  &kp LC(Y)  &kp LC(Z)  &kp LC(C)  &kp LC(V)  &kp LC(X)  &trans    &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans  &kp SLASH
                               &trans     &trans     &trans     &trans    &trans  &trans            &trans             &trans
             >;
+
+            sensor-bindings = <&sensor_rotate_right_encoder>;
         };
 
         lower_layer {
@@ -210,6 +228,8 @@
 &trans      &trans        &kp CAPS      &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp K_MUTE    &trans    &trans  &trans        &kp MINUS  &kp KP_PLUS      &kp LBRC  &kp RBRC  &kp PIPE
                                         &trans             &trans           &trans        &trans    &trans  &trans        &trans     &trans
             >;
+
+            sensor-bindings = <&sensor_rotate_right_encoder>;
         };
 
         raise_layer {
@@ -228,6 +248,8 @@
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_5  &none   &mkp MB1    &trans  &kp KP_PLUS  &trans    &trans    &trans     &trans  &trans
                                     &trans        &trans        &trans  &trans      &trans  &trans       &trans    &trans
             >;
+
+            sensor-bindings = <&sensor_rotate_right_encoder>;
         };
     };
 };
