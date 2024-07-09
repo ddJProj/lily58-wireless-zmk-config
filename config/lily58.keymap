@@ -167,7 +167,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             label = "SENSOR_ROTATE_RIGHT_ENCODER";
             #sensor-binding-cells = <0>;
-            bindings = <&kp C_VOLUME_UP>, <&kp C_VOLUME_DOWN>;
+            bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         right_encode_with_param: right_encode_with_param {
@@ -204,7 +204,7 @@
                                           &kp LEFT_ALT  &mo 3   &shft_mod1  &gui_and_lay1    &cntrl_andlayer1  &shft_mod1  &mo 3   &mo 2
             >;
 
-            sensor-bindings = <&rot_kp C_VOLUME_UP K_VOLUME_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         Layer_1 {
@@ -216,7 +216,7 @@
                               &trans     &trans     &trans     &trans    &trans  &trans            &trans             &trans
             >;
 
-            sensor-bindings = <&rot_kp C_VOLUME_UP C_VOLUME_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         lower_layer {
@@ -236,7 +236,7 @@
                                              &trans             &trans           &trans             &trans    &trans  &trans            &trans             &trans
             >;
 
-            sensor-bindings = <&rot_kp C_VOLUME_UP C_VOLUME_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         raise_layer {
