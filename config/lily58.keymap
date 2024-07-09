@@ -176,6 +176,16 @@
             #sensor-binding-cells = <2>;
             bindings = <&kp>, <&kp>;
         };
+{
+    behaviors {
+        rot_kp: sensor_rotate_kp {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
+
     };
 
     keymap {
@@ -197,8 +207,7 @@
 &kp TAB       &kp SEMICOLON   &kp Q      &kp J       &kp K          &kp X       &kp CAPSLOCK     &kp C_MUTE        &kp B          &kp M      &kp W   &kp V   &kp Z   &kp EQUAL
                                          &mo 3       &kp BACKSPACE  &shft_mod1  &gui_and_lay1    &cntrl_andlayer1  &mod_low_shft  &kp SPACE  &mo 3
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+            sensor-bindings = <&rot_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         Layer_1 {
@@ -210,7 +219,7 @@
                               &trans     &trans     &trans     &trans    &trans  &trans            &trans             &trans
             >;
 
-            sensor-bindings = <&sensor_rotate_right_encoder>;
+            sensor-bindings = <&rot_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         lower_layer {
@@ -230,7 +239,7 @@
                                              &trans             &trans           &trans             &trans    &trans  &trans          &trans            &trans
             >;
 
-            sensor-bindings = <&right_encode_with_param C_VOLUME_UP C_VOLUME_DOWN>;
+            sensor-bindings = <&rot_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         raise_layer {
